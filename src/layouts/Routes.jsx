@@ -29,10 +29,7 @@ import Login from '../component/web/log in/login.jsx';
       } ,
 
 
-      {
-        path:'login' ,
-        element :<Login /> ,
-      } ,
+     
     {
       path:'catigories' ,
       element:<Catigories /> ,
