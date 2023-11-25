@@ -10,7 +10,6 @@
     createBrowserRouter,
   } from "react-router-dom";
 import Register from '../component/web/register/Register.jsx';
-import Login from '../component/web/log in/login.jsx';
   
  
  
