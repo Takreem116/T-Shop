@@ -1,24 +1,17 @@
 import React from 'react'
 import Input from '../../pages/Input.jsx'
 import { useFormik } from 'formik'
-import { registerSchema  } from '../validation/validate.js'
+import { loginSchema  } from '../validation/validate.js'
 import { toast } from 'react-toastify';
 
 import axios from 'axios'
 
-function Register() {
+function Login() {
 const initialValues = {
-    userName:'' ,
     email:'' ,
     password:''
-    , image:''
 }
 
-const handelFieldChange = (event)=>{
-
-
-    formik.setFieldValue('image' , event.target.files[0]);
-}
 
 
 const onSubmit =async users => {
@@ -26,15 +19,13 @@ const onSubmit =async users => {
     console.log(users)
 
     const formData = new FormData() ;
-    formData.append ("userName" , users.userName) ;
     formData.append ("password" , users.password) ;
     formData.append ("email" , users.email) ;
-    formData.append ("image" , users.image) ;
 
-    const{data} = await axios.post(`https://ecommerce-node4.vercel.app/auth/signup` , formData);
+    const{data} = await axios.post(`https://ecommerce-node4.vercel.app/auth/signin` , formData);
     console.log(data)
     if( data.message =='success'){
-        toast.success('account created successfuly , plz verify your email to log in', {
+        toast.success('log in successfuly ', {
             position: "top-left",
             autoClose: 5000,
             hideProgressBar: false,
@@ -56,20 +47,14 @@ const onSubmit =async users => {
     const formik = useFormik( {
         initialValues ,
          onSubmit ,
-          validationSchema :registerSchema , 
+          validationSchema :loginSchema , 
     }) ;
 
 
     // console.log(formik.values)
 
 
-const inputs = [{
-    type :'text' ,
-    title:'User Name' ,
-    id :'username',
-    name:'userName' ,
-    value:formik.values.userName ,
-} ,
+const inputs = [
 {
     type:'email',
     title:'Email' ,
@@ -94,16 +79,7 @@ const inputs = [{
 
 }
 
-, {
-    type:'file' ,
-    title:' User Image' ,
-    id :'image',
-    name:'image' ,
-    onChange:handelFieldChange,
-
-
-
-}]
+]
 
 
 
@@ -116,7 +92,7 @@ const renderInputs = inputs.map ( (input , index) =>
   id={input.id}
    key={index} 
    value={input.value}
-   onChange={ input.onChange || formik.handleChange}
+   onChange={  formik.handleChange}
     errors={formik.errors}
     touched={formik.touched}
     onBlur = {formik.onBlur}
@@ -131,12 +107,12 @@ const renderInputs = inputs.map ( (input , index) =>
 
 <div className='container justify-content-center mt-5 bg-danger-subtle
  w-50 rounded-5' >
-<h2 className='ps-4 pt-5'> Create Account </h2>
- <form onSubmit={formik.handleSubmit}  encType='multipart/form-data'>
+<h2 className='ps-4 pt-5'> Log In </h2>
+ <form onSubmit={formik.handleSubmit} >
     
 
     {renderInputs}
-    <button className='my-4 ms-4 w-25 rounded-5 px-3 py-2' type='submit' disabled={!formik.isValid} > Register </button>
+    <button className='my-4 ms-4 w-25 rounded-5 px-3 py-2' type='submit' disabled={!formik.isValid} > Log In </button>
      </form>
 
 </div>
@@ -145,4 +121,4 @@ const renderInputs = inputs.map ( (input , index) =>
 </>  )
 }
 
-export default Register
+export default Login
