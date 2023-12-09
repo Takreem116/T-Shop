@@ -23,7 +23,7 @@ const handelFieldChange = (event)=>{
 
 const onSubmit =async users => {
 
-    console.log(users)
+    // console.log(users)
 
     const formData = new FormData() ;
     formData.append ("userName" , users.userName) ;
@@ -32,7 +32,7 @@ const onSubmit =async users => {
     formData.append ("image" , users.image) ;
 
     const{data} = await axios.post(`https://ecommerce-node4.vercel.app/auth/signup` , formData);
-    console.log(data)
+    // console.log(data)
     if( data.message =='success'){
         toast.success('account created successfuly , plz verify your email to log in', {
             position: "top-left",

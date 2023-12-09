@@ -1,9 +1,11 @@
 import React from 'react'
+import Catigories from '../catigories/Catigories.jsx'
 
 function Home() {
   return (
-    <div>Home web</div>
-  )
+
+<Catigories />
+    )
 }
 
 export default Home
