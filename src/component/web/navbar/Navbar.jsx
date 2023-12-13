@@ -18,7 +18,7 @@ const getcount = async()=>{
   return res
 }
 const {data , isLoading } = useQuery('get_cart' , getcount)
-console.log(data)
+// console.log(data)
 
 const navigate = useNavigate()
 
@@ -68,7 +68,7 @@ if (isLoading){
         (
 
 <li className="nav-item">
-         <Link className="nav-link"  to ="/cart">Cart <span className='bg-danger'> {data.count ? data.count : 0}</span> </Link>
+         <Link className="nav-link"  to ="/cart">Cart <span className='bg-danger'> {data ? data.count : 0}</span> </Link>
        </li>
         )
            : null

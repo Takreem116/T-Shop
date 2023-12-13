@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './cart.css'
 import { CartContext } from '../context/cart.jsx'
 import { useQuery } from 'react-query'
+import { Link } from 'react-router-dom'
 
 function Cart() {
 
@@ -9,9 +10,10 @@ function Cart() {
 
 
 const {GetCartContext}=useContext(CartContext)
-
 const{removeitemContext}=useContext(CartContext)
-
+const{clearCart} = useContext(CartContext)
+const{increaseQuntity} = useContext(CartContext)
+const{decreaseQuntity} = useContext(CartContext)
 
 const getCart = async()=>{
 
@@ -22,11 +24,34 @@ const getCart = async()=>{
     return res
 }
 
+const clearcart =async()=>{
+ const res =  clearCart();
+//  console.log(res)
+return res 
+
+}
+
 
 const removeItem = (productId)=>{
 
 const res = removeitemContext(productId)
 }
+
+
+ const increaseQun=async(productId)=>{
+  
+  const res = increaseQuntity(productId)
+  // console.log(res)
+  return res
+ }
+
+
+ const decreaseQun=async(productId)=>{
+  
+  const res = decreaseQuntity(productId)
+  // console.log(res)
+  return res
+ }
 
 
 const {data , isLoading } = useQuery('get_cart' , getCart)
@@ -83,8 +108,8 @@ if (isLoading){
                   </a>
                 </div>
               </div>
-              <div className="quantity">
-                <button>
+              <div className="quantity" >
+                <button className='dec'  onClick={()=>decreaseQun(product.productId)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={16}
@@ -101,8 +126,8 @@ if (isLoading){
                     />
                   </svg>
                 </button>
-                <span>1</span>
-                <button>
+                <span>{product.quantity}</span>
+                <button className='inc' onClick={()=>increaseQun(product.productId)}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={16}
@@ -119,13 +144,13 @@ if (isLoading){
                   </svg>
                 </button>
               </div>
-              <div className="price">$40</div>
-              <div className="subtotal">$38.00</div>
+              <div className="price">${product.details.price}</div>
+              <div className="subtotal">${ (product.quantity) * (product.details.price)}</div>
             </div>
-): <h2> No Item Availiable Now </h2>}
+): (<h2> No Item Availiable Now </h2>)}
             
 
-
+<button  className='btn bg-danger fs-5 rounded-pill text-white w-25' onClick={clearcart}> Clear Cart </button>
             
           </div>
           <div className="cart-summary">
@@ -158,7 +183,7 @@ if (isLoading){
                 <span>$1345.00</span>
               </div>
               <div className="checkout">
-                <a href="#">Chekout</a>
+                <Link to='/order'>Chekout</Link>
               </div>
             </div>
           </div>

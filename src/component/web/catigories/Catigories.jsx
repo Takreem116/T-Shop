@@ -28,7 +28,7 @@ function Catigories() {
 
 
 const {data, isLoading} = useQuery('web_cat' , getCatigories);
-console.log(data)
+// console.log(data)
    
 
 if(isLoading){

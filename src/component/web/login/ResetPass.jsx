@@ -22,7 +22,7 @@ const navigate = useNavigate()
     const onSubmit = async ({email , password,code}) =>{
 const {data} = await axios.patch(`${import.meta.env.VITE_API_URL}/auth/forgotPassword` , {email, password,  code})
 navigate('/login')
-console.log(data)
+// console.log(data)
     }
 
     const formik = useFormik( {

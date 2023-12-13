@@ -23,7 +23,7 @@ const sendcode =async (e)=>{
     const{data} = await axios.patch(`${import.meta.env.VITE_API_URL}/auth/sendcode` ,{email})
     navigate('/resetpass')
 
-    console.log(data)
+    // console.log(data)
 
 
 

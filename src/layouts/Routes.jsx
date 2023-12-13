@@ -17,6 +17,10 @@ import Product from '../component/web/products/Product.jsx';
 import ProtectedRoute from '../component/web/protectedRoute/ProtectedRoute.jsx';
 import Cart from '../component/web/cart/Cart.jsx';
 import Profile from '../component/web/profile/Profile.jsx';
+import Order from '../component/web/order/Order.jsx';
+import GetOrder from '../component/web/profile/GetOrder.jsx';
+import UserInfo from '../component/web/profile/UserInfo.jsx';
+import UserContact from '../component/web/profile/UserContact.jsx';
   
  
  
@@ -69,7 +73,27 @@ import Profile from '../component/web/profile/Profile.jsx';
         {
 
           path:'profile',
-          element:<Profile />
+          element:
+          <ProtectedRoute>
+  <Profile />
+          </ProtectedRoute>
+        ,
+          children :[
+            {
+              path:'info',
+              element:<UserInfo/>
+            }
+            , {
+              path:'contact' ,
+              element:<UserContact />
+            } ,
+            {
+
+
+              path:'getOrder' ,
+              element: <GetOrder />
+            }
+          ]
 
         } ,
 
@@ -87,6 +111,12 @@ import Profile from '../component/web/profile/Profile.jsx';
 
         }
         ,
+        {
+
+
+          path:'order' ,
+          element: <Order />
+        }, 
         {
           path:'*',
           element:<h2>page not found --- web</h2>

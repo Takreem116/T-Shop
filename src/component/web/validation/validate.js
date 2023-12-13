@@ -27,3 +27,12 @@ export const resetSchema = yup.object ({
 })
 
 
+
+export const ordertSchema = yup.object ({
+
+
+   phone: yup.string().required("phone  is Required").min(3 ,"must at least 3 char").max(10 , " max is 10 char"),
+   address :yup.string().required("address is Required").min(3 ,"must at least 3 char").max(30 , " max is 30 char"),
+})
+
+
