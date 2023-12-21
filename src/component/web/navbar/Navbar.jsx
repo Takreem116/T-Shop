@@ -3,7 +3,10 @@ import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/cart.jsx'
 import { useQuery } from 'react-query'
+import { CiShoppingCart } from "react-icons/ci";
+
 import { UserContext } from '../context/User.jsx'
+import style from './navbar.module.css'
 
 function Navbar() {
 
@@ -40,9 +43,9 @@ if (isLoading){
 <>
 
 
-<nav className="navbar navbar-expand-lg bg-danger-subtle">
+<nav className={`navbar navbar-expand-lg fixed-top ${style.navbar}`}>
       <div className="container">
-      <a className="navbar-brand" href="#">T-shop</a>
+      <a className="navbar-brand" href="#">Julia-Store</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon" />
       </button>
@@ -50,7 +53,7 @@ if (isLoading){
         <ul className="navbar-nav m-auto mb-2 mb-lg-0">
          
           <li className="nav-item">
-            <a className="nav-link" href="#">Home</a>
+            <Link className="nav-link" to="/">Home</Link>
           </li>
 
 
@@ -60,7 +63,7 @@ if (isLoading){
 
 
           <li className="nav-item">
-          <a className="nav-link" href="#">Products</a>
+          <Link className="nav-link" to="/getallproducts">Products</Link>
         </li>
 
 
@@ -68,7 +71,10 @@ if (isLoading){
         (
 
 <li className="nav-item">
-         <Link className="nav-link"  to ="/cart">Cart <span className='bg-danger'> {data ? data.count : 0}</span> </Link>
+         <Link className="nav-link"  to ="/cart">Cart <CiShoppingCart  className='fs-5'/>
+ <span className=' text-white rounded-5'> {data ? data.count : 0}</span> </Link>
+       
+       
        </li>
         )
            : null
@@ -85,7 +91,7 @@ if (isLoading){
         <ul className="navbar-nav">
         <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Action
+          Account
         </a>
 
 
@@ -94,19 +100,19 @@ if (isLoading){
       {userToken == null ?
           
   <>
-  <ul className="dropdown-menu ">
-     <li><Link className="dropdown-item" to="register">register</Link></li>
+  <ul className={` dropdown-menu ${style.action}`} >
+     <li><Link className="dropdown-item text-secondary" to="register">register</Link></li>
      <li><hr className="dropdown-divider" /></li>
-     <li><Link className="dropdown-item" to="login">login</Link></li>
+     <li><Link className="dropdown-item text-secondary" to="login">login</Link></li>
      
    </ul>
    </> 
  : (
      <>
      <ul className="dropdown-menu ">
-             <li><Link className="dropdown-item" to="profile">Profile</Link></li>
+             <li><Link className="dropdown-item text-secondary" to="profile">Profile</Link></li>
              <li><hr className="dropdown-divider" /></li>
-             <li><Link className="dropdown-item" onClick={logOut}>Log Out</Link></li>
+             <li><Link className="dropdown-item text-secondary " onClick={logOut}>Log Out</Link></li>
            </ul> 
      </>
   

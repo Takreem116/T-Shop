@@ -4,6 +4,7 @@ import Input from '../../pages/Input.jsx';
 import { resetSchema  } from '../validation/validate.js'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import style from './login.module.css'
 
 
 function ResetPass() {
@@ -92,15 +93,23 @@ navigate('/login')
 <> 
 
 
-<div className='container justify-content-center mt-5 bg-danger-subtle
- w-50 rounded-5' >
-<h2 className='ps-4 pt-5'> Reset Password </h2>
+<div className='container justify-content-center my-5 pt-5 w-50 ' >
+
+<div  className={`${style.login}`}>
+<h2 className='login-text ps-4 pt-5 text-center'> Reset Password </h2>
  <form onSubmit={formik.handleSubmit}  >
     
 
     {renderInputs}
-    <button className='my-4 ms-4 w-25 rounded-5 px-3 py-2' type='submit' disabled={!formik.isValid} > Reset </button>
+
+    <div className= {`${style.btn}`}>
+    <button className={`${style.login_btn}`} type='submit' disabled={!formik.isValid} > Reset </button>
+
+</div>
      </form>
+    </div>
+
+
 
 
 

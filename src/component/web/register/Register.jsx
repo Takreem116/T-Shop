@@ -3,7 +3,7 @@ import Input from '../../pages/Input.jsx'
 import { useFormik } from 'formik'
 import { registerSchema  } from '../validation/validate.js'
 import { toast } from 'react-toastify';
-
+import style from '../login/login.module.css'
 import axios from 'axios'
 
 function Register() {
@@ -129,15 +129,23 @@ const renderInputs = inputs.map ( (input , index) =>
 <> 
 
 
-<div className='container justify-content-center mt-5 bg-danger-subtle
- w-50 rounded-5' >
-<h2 className='ps-4 pt-5'> Create Account </h2>
+<div className='container justify-content-center my-5 pt-5
+ w-50 ' >
+
+
+    <div className={`${style.login}`}>
+    <h2 className='login-text ps-4 pt-5 text-center'> Create Account </h2>
  <form onSubmit={formik.handleSubmit}  encType='multipart/form-data'>
     
 
     {renderInputs}
-    <button className='my-4 ms-4 w-25 rounded-5 px-3 py-2' type='submit' disabled={!formik.isValid} > Register </button>
+    <div className={`${style.btn}`}> 
+    <button className={`${style.login_btn}`}  type='submit' disabled={!formik.isValid} > Register </button>
+</div>
      </form>
+
+    </div>
+
 
 </div>
 

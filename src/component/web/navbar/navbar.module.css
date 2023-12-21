@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,400;0,700;1,500;1,600&display=swap');
+/* font-family: 'Roboto Condensed', sans-serif; */
+
+.navbar{
+
+    background-color:#a6866a ;
+}
+
+
+.navbar a{
+
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.navbar a:hover{
+
+    color: #fff !important;
+}
+
+.navbar  .dropdown-menu .dropdown-item{
+    color: #a6866a;
+}
+
+
+.action Link {
+    color: red !important;
+}

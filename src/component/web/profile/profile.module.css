@@ -1,8 +1,14 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+/* font-family: 'Jockey One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap');
+/* font-family: 'Poppins', sans-serif; */
 .profile{
 
 
 
-    background-color:beige ;
+    background-color:#fafafa ;
     display: flex;
     gap: 30px;
     height: 100;
@@ -11,12 +17,14 @@
 
 .profileLinks nav {
 
-    background-color:floralwhite;
+    background-color:#fff;
     display: flex;
     height: 100vh;
     flex-direction: column;
     gap: 20px;
     width: 300px;
+    font-family: 'Jockey One', sans-serif;
+
 }
 
 .profileLinks {
@@ -28,11 +36,48 @@
     flex-grow: 1;
 }
 
-nav a{
+.links a{
 
-    color: black;
+    color: #666;
     text-decoration: none;
     font-size: 20px;
     padding-left: 20px;
     padding-top: 10px;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+
+}
+
+
+
+
+/*  start userinfo page &contact */
+
+
+.title {
+    font-family: 'Jockey One', sans-serif;
+    color: rgb(166, 134, 106);
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+.username{
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+
+}
+
+.img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid darkgray;
+}
+/* end userinfo page &contact*/
+
+/* order i nformation page */
+
+.table_font{
+    font-family: 'Poppins', sans-serif;
+    color: #666;
 }

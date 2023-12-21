@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+/* font-family: 'Jockey One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/* font-family: 'Indie Flower', cursive; */
+.personal_rev{
+text-align: center;
+  
+}
+
+.reviews{
+
+    background-color: #f8f4f1 !important;
+}
+.add_reviwe{
+    background-color: #f8f4f1 !important;
+    margin-top: 12%;
+
+}
+
+
+.add_to_cart{
+    background-color: #a6866a;
+    color: #fff;
+    border: 1px solid #a6866a;
+    padding: 10px;
+}
+
+.img{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+}
+
+.text_area {
+    height: 101px;
+    width: 52%;
+}
+
+
+.titel{
+    font-family: 'Jockey One', sans-serif;
+    color: rgb(166, 134, 106);
+    text-decoration: underline;
+    padding-bottom: 10px;
+
+}
+
+
+.review_titel{
+    font-family: 'Jockey One', sans-serif;
+    color: #666;
+font-size: 20px;
+font-weight: 900;
+
+}
+
+.review_comment{
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+
+}
+.review_userName{
+    font-family: 'Indie Flower', cursive;
+        font-size: 18px;
+        text-decoration: underline !important;
+color: chocolate;
+}
+.product_img{
+    width: 67%;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+align-items: center;
+
+
+}
+
+
+.Allproduct_img{
+
+    width: 60%;
+    height: auto;
+        box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+align-items: center;
+
+}
+.active_item{
+    font-family: 'Poppins', sans-serif;
+color:darkslategrey;
+font-weight: 600;
+}
+
+
+
+
+
+.span{
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.info{
+
+
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    font-size: 15px;
+}
+
+
+.star{
+    background: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    font-size: 20px;
+}
+.add_comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+/* allproductpage */
+
+
+.product_details{
+
+}

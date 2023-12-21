@@ -1,10 +1,39 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+/* font-family: 'Jockey One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+
+
 .cart{
     padding:20px 0 60px 0;
 
 
 }
+.cart-titel{
 
 
+        font-family: 'Jockey One', sans-serif;
+        color: rgb(166, 134, 106);
+        text-decoration: underline;
+        padding-bottom: 10px;
+    
+    
+}
+
+.item-style{
+    font-family: 'Poppins', sans-serif;
+    color: #6C7275;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.clearCart{
+    background-color: #a6866a !important;
+    font-size: 25px !important;
+}
 .cart-items{
     display: flex;
     padding:40px 0;
@@ -25,10 +54,7 @@
 .cart-header .first-row{
     flex-grow: 1;
 }
-.item h2{
-    font-size:16px;
-    font-weight: 900;
-}
+
 .products{
     display: flex;
     flex-direction: column;
@@ -121,7 +147,7 @@ font-size:20px;
     border-radius: 6px;
     border: 1px solid #6C7275;
     background-color: #fff;
-    width:630px;
+    width:417px;
     margin-top: 47px;
 
 

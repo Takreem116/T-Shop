@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+/* font-family: 'Jockey One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+
+body{
+
+    background-color: #fafafa !important;
+
+
+
+}
+
+.login_text{
+
+    font-family: 'Poppins', sans-serif;
+        text-align: center;
+    padding-top: 4%;
+
+}
+
+.login {
+    background-color: #fafafa !important;
+box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+padding-bottom: 11%;
+font-size: 20px;
+color: rgb(166, 134, 106);
+
+font-family: 'Jockey One', sans-serif;
+}
+
+
+.login_btn {
+    background-color: #a6866a;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 8px 28px;
+    border: 1px solid;
+    text-transform: uppercase;
+    margin-top: 4%;
+
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_btn:hover {
+
+background-color: #fff;
+color: #a6866a !important;
+transition: 0.5s;
+}
+
+.forgot {
+    text-decoration: none;
+    color: #a6866a !important;
+    padding-left: 41%;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    
+}

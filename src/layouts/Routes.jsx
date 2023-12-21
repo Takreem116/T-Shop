@@ -21,7 +21,7 @@ import Order from '../component/web/order/Order.jsx';
 import GetOrder from '../component/web/profile/GetOrder.jsx';
 import UserInfo from '../component/web/profile/UserInfo.jsx';
 import UserContact from '../component/web/profile/UserContact.jsx';
-  
+import GetAllProducts from '../component/web/products/GetAllProducts.jsx';
  
  
  export  const router = createBrowserRouter([
@@ -48,7 +48,7 @@ import UserContact from '../component/web/profile/UserContact.jsx';
           element:<ResetPass />
         },
         {
-          path:'home',
+index:true,
           element:<Home />
         },
         {
@@ -69,6 +69,7 @@ import UserContact from '../component/web/profile/UserContact.jsx';
           element:<Product />
 
         } ,
+     
         
         {
 
@@ -117,6 +118,13 @@ import UserContact from '../component/web/profile/UserContact.jsx';
           path:'order' ,
           element: <Order />
         }, 
+
+        {
+
+
+          path:'getallproducts' ,
+          element: <GetAllProducts />
+        },
         {
           path:'*',
           element:<h2>page not found --- web</h2>

@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/User.jsx';
-
+import style from './login.module.css'
 function Login() {
 
 
@@ -43,7 +43,7 @@ const onSubmit =async users => {
         progress: undefined,
         theme: "colored",
         })
-    navigate('/home')
+    navigate('/')
 
 
 
@@ -112,18 +112,26 @@ const renderInputs = inputs.map ( (input , index) =>
 <> 
 
 
-<div className='container justify-content-center mt-5 bg-danger-subtle
- w-50 rounded-5' >
-<h2 className='ps-4 pt-5'> Log In  </h2>
- <form onSubmit={formik.handleSubmit}  >
+<div  className=' container justify-content-center my-5 pt-5
+ w-50 ' >
+
+    <div  className={`${style.login}`}>
+    <h2 className='login-text ps-4 pt-5 text-center'> Log in to your account
+  </h2>
+ <form  onSubmit={formik.handleSubmit}  >
     
 
     {renderInputs}
-    <button className='my-4 ms-4 w-25 rounded-5 px-3 py-2' type='submit' disabled={!formik.isValid} > Login </button>
+    <div className= {`${style.btn}`}>
+    <button className={`${style.login_btn}`} type='submit' disabled={!formik.isValid} > Login </button>
+
+    </div>
      </form>
 
 
-     <Link className='text text-danger  text-decoration-none ps-5 mb-5' to="sendcode"> Forgot Password .. ?</Link>
+     <Link className={`${style.forgot}`} to="/sendcode"> Forgot Password .. ?</Link>
+
+    </div>
 
 </div>
 

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../context/User.jsx'
+import style from './profile.module.css'
 
 
 
@@ -14,12 +15,17 @@ function UserInfo() {
         return <p> loading .... </p>
     }
   return (
-    <div>
+    <div className={`pt-5`}>
 
-        <h2> User Information </h2>
+        <h2 className={`${style.title}`}> User Information </h2>
 
-        <h3>{userData.userName} </h3>
-        <img  src={userData.image.secure_url} alt='user-image'/>
+        <div className='d-flex pt-4 '>
+
+        <img className={`${style.img}`} src={userData.image.secure_url} alt='user-image'/>
+        <h3 className={ ` ps-5 pt-3 ${style.username}`}><span className={ ` pe-2 py-3 ${style.username}`}> UserName:-</span> {userData.userName} .</h3>
+
+
+        </div>
     </div>
   )
 }

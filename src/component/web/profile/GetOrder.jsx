@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../context/User.jsx'
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import style from './profile.module.css'
 
 function GetOrder() {
 
@@ -14,7 +15,7 @@ function GetOrder() {
         const{data}=await axios.get(`${import.meta.env.VITE_API_URL}/order` , {headers : {Authorization : `Tariq__${token}`}})
 
 
-        // console.log(data.orders)
+        console.log(data.orders)
 
         return data.orders    
       
@@ -22,21 +23,62 @@ function GetOrder() {
 
 
     const {data , isLoading } = useQuery('get_cart' , getOrder)
-
-    // console.log(data)
-
+    
 if(isLoading){
   return <p> loading .....</p>
 }
 
   return (
-<div className='container'>
-
-  <h2> Order Information</h2> 
+<div className='container pt-5'>
 
 
-  {console.log(data.orders)}
-{data.length ?data.map((order , index )=>
+
+
+  <h2 className={`${style.title}`}> Order Information</h2> 
+
+<table className={`table ${style.table_font}`}>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Address</th>
+      <th scope="col">phone Number</th>
+      <th scope="col">final Price</th>
+      <th scope="col">payment Type</th>
+      <th scope="col">Status</th>
+
+      
+
+
+      
+    </tr>
+  </thead>
+
+  {data.length ?data.map((order , index )=>
+
+
+  <tbody key={order._id}>
+
+<tr >
+  <th scope="row">{index}</th>
+  <td>{order.address}</td>
+  <td>{order.phoneNumber}</td>
+  <td>{order.finalPrice}</td>
+  <td>{order.paymentType}</td>
+  <td>{order.status}</td>
+
+
+</tr>
+
+
+</tbody>
+
+
+) : <p> no order</p>} 
+
+</table>
+
+
+{/* {data.length ?data.map((order , index )=>
 
 <div className='order-info' key={order._id}>
   <h3> Order {index} </h3>
@@ -50,7 +92,7 @@ if(isLoading){
 
 </div>
 
-) : <p> no order</p>}
+) : <p> no order</p>} */}
 
 </div> 
 

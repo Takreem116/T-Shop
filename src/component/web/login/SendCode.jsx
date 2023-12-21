@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import style from './login.module.css'
 
 function SendCode() {
 
@@ -39,14 +40,23 @@ const sendcode =async (e)=>{
 <> 
 
 
-<div className='container justify-content-center mt-5 bg-danger-subtle
+<div className='container justify-content-center my-5 pt-5 
  w-50 rounded-5' >
-<h2 className='ps-4 pt-5'> Send Code  </h2>
- <form   >
+
+<div  className={`${style.login}`}>
+<h2 className='ps-4 pt-5 login-text text-center'> Send Code  </h2>
+ <form   className=' px-5'>
     <label className='py-4' > Email</label>
     <input className='form-control w-75' type='email' name='email' onChange={getEmail}  />
-    <button className='my-4 ms-4 w-25 rounded-5 px-3 py-2' type='submit' onClick={sendcode}> send code </button>
+    
+    <div className= {`${style.btn}`}>
+    <button className={`${style.login_btn}`} type='submit' onClick={sendcode}> send code </button>
+
+      </div>
+
      </form>
+</div>
+
 
 
 

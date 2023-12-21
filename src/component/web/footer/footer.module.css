@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,400;0,700;1,500;1,600&display=swap');
+/* font-family: 'Roboto Condensed', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+/* font-family: 'Jockey One', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+.footer{
+    background-color: #ffff;
+    margin-top: 10%;
+    padding-top: 3%;
+
+
+}
+.intro {
+
+    display: flex;
+}
+
+.para1{
+    width: 30%;
+    margin-right: 4%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.para1 p {
+    color: #787878;
+}
+
+.info{
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+.info li{
+
+    list-style: none;
+}
+
+.info a {
+
+    text-decoration: none;
+}
+
+.info span {
+    color: #787878;
+}
+
+.footer_tail{
+    background-color:#a6866a;
+
+    padding: 10px;
+
+}
+    .tail_info{
+        color: #ffff;
+    }
